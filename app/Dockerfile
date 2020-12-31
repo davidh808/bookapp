@@ -1,5 +1,9 @@
-FROM node:12-alpine
+FROM node:lts-alpine
+RUN npm install -g http-server
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
 COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
+RUN npm run build
+EXPOSE 8080
+CMD ["http-server", "dist"]
