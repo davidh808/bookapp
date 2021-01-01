@@ -1,0 +1,27 @@
+version: "3"
+services: 
+  bookapp:
+    build:
+      context: ../app
+      dockerfile: dockerfile
+    ports:
+      - 8080:8080
+    container_name: bookapp
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DB: books
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - books-mysql-data:/var/lib/docker/volumes/books-db/_data
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: books
+
+volumes:
+  books-mysql-data:
