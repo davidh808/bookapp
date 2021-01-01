@@ -1,6 +1,6 @@
 <template>
   <div class="bookapp">
-    <Books msg="This is the Book App page!"/>
+    <Books/>
   </div>
 </template>
 

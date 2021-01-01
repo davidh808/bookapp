@@ -1,8 +1,9 @@
-# app
+# Book App
 
 ## Project setup
 ```
-npm install
+Dockerized app -- from terminal run:
+docker-compose up
 ```
 
 ### Compiles and hot-reloads for development
@@ -12,6 +13,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
+The dockerfile automatically executes:
 npm run build
 ```
 
